@@ -57,7 +57,7 @@ const handleclick=(id)=>{
 
 
 const displayCard=(data)=>{
-    
+    let count=1;
     const cardSection= document.getElementById("card-section")
     cardSection.innerHTML=``
     const imgSection= document.getElementById("img-section")
@@ -103,12 +103,15 @@ const displayCard=(data)=>{
 
     <div class="flex justify-between items-center">
     <button onclick=handleimg(${singledata.petId }) class="btn"><img class="w-6 h-6 " src="${"https://img.icons8.com/?size=50&id=24816&format=png"}" alt="Like"></button>
-    <button class="btn">Adopt</button>
-    <button class="btn">Details</button>
+    <button id="${singledata.petId}" onclick=handleAdopt(${singledata.petId}) class="btn">Adopt</button>
+    <button id="${singledata.petId+1000}" onclick=handleDetails(${singledata.petId+1000}) class="btn">Details</button>
+    
       
     </div>
     `
     cardSection.appendChild(card)
+
+    count++
     
     })
 }
@@ -145,6 +148,77 @@ const showImgSection=(data)=>{
   div.innerHTML=`<img class="h-full w-full object-cover rounded-lg" src="${data.image}" alt="">`
 
   imgSection.appendChild(div)
+}
+
+const handleAdopt=(data)=>{
+  
+  let btn =document.getElementById(data);
+  btn.innerText="Adopted"
+  btn.disabled = true
+  console.log(btn)
+}
+
+
+
+
+const handleDetails=(data)=>{
+  data=data-1000;
+  fetch(`https://openapi.programming-hero.com/api/peddy/pet/${data}`)
+    .then((res)=>res.json())
+    .then((data)=>showModalSection(data.petData))
+    .catch((err)=>console.log(err))
+
+  
+  
+}
+
+const showModalSection=(data)=>{
+  console.log(data)
+  const Details=document.getElementById("details");
+  const div=document.createElement("div")
+  Details.innerHTML=``
+  
+  div.innerHTML=`
+  <div class="">
+     <img class="h-full w-full object-cover rounded-lg border"
+      src="${data.image}"
+      alt="Pet Image" />
+    </div>
+      <h2 class="text-xl py-5 font-semibold md:font-bold">${data.pet_name}</h2>
+
+
+    <div class="grid grid-cols-2">
+    <div class="flex gap-2 col-span-1">
+      <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=48&id=VhlToDIAjOFs&format=png"}" alt="">
+      <p>Breed:${data.breed      }</p>
+    </div>
+    <div class="flex gap-2 col-span-1">
+      <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=80&id=udduMUcrHmZa&format=png"}" alt="Date">
+      <p>Birth:${data.date_of_birth}</p>
+    </div>
+    <div class="flex gap-2 col-span-1">
+      <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=80&id=70834&format=png"}" alt="Gender">
+      <p>Gender:${data.gender}</p>
+    </div>
+    <div class="flex gap-2 col-span-1">
+      <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=50&id=7163&format=png"}" alt="Price">
+      <p>Price:${data.price }</p>
+    </div> 
+    <div class="flex gap-2 col-span-1">
+      <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=50&id=7163&format=png"}" alt="Price">
+      <p>vaccinated_status:${data.vaccinated_status}</p>
+    </div> 
+    </div>
+    <div class="">
+      <h2 class="text-xl font-bold py-5">Detail Information</h2>
+      <p>${data.
+        pet_details
+        }</p>
+    </div> 
+  `
+  Details.appendChild(div)
+  document.getElementById('my_modal_1').showModal()
+  
 }
 
 

@@ -6,6 +6,7 @@
     <title>Pet Adoption Platform</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -75,6 +76,21 @@
 
     </main>
 
+    
+    <dialog id="my_modal_1" class="modal">
+        <div  class="modal-box w-11/12 max-w-5xl">
+        <div id="details">
+
+        </div>
+          
+          <div class="modal-action flex justify-center">
+            <form method="dialog">
+              <!-- if there is a button, it will close the modal -->
+              <button class="btn"><div class="w-24">Close</div></button>
+            </form>
+          </div>
+        </div>
+      </dialog>
 
     <script src="./JS/index.js"></script>
     
