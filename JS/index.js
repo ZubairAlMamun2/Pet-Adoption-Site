@@ -54,7 +54,9 @@ const handleclick=(id)=>{
 }
 
 const displayCard=(data)=>{
-    let count=1;
+
+    
+    
     const cardSection= document.getElementById("card-section")
     cardSection.innerHTML=``
     const imgSection= document.getElementById("img-section")
@@ -108,9 +110,71 @@ const displayCard=(data)=>{
     `
     cardSection.appendChild(card)
 
-    count++
-    
     })
+
+
+    // sorting section
+    const btn=document.getElementById("sort-button")
+    
+    btn.addEventListener("click",()=>{
+
+      cardSection.innerHTML=``
+      console.log(data);
+    let newarr = data.sort(
+        (p1, p2) => (p1.price < p2.price) ? 1 : (p1.price > p2.price) ? -1 : 0);
+    
+    console.log("Products sorted based on descending order of their prices are:")
+    //console.log(newarr);
+    
+    newarr.map((singledata)=>{
+      console.log(singledata)
+      //console.log(singledata)
+    const card= document.createElement("div");
+    card.classList="card p-5 shadow-lg border rounded-lg col-span-3  lg:col-span-1"
+    card.innerHTML=
+    `
+    <div class="">
+     <img class="h-full w-full object-cover rounded-lg border"
+      src="${singledata.image
+      }"
+      alt="Pet Image" />
+    </div>
+      <h2 class="text-lg font-semibold md:font-bold">${singledata.pet_name}</h2>
+    <div class="flex gap-2">
+      <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=48&id=VhlToDIAjOFs&format=png"}" alt="">
+      <p>Breed:${singledata.breed }</p>
+    </div>
+    <div class="flex gap-2">
+      <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=80&id=udduMUcrHmZa&format=png"}" alt="Date">
+      <p>Birth:${singledata.date_of_birth}</p>
+    </div>
+    <div class="flex gap-2">
+      <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=80&id=70834&format=png"}" alt="Gender">
+      <p>Gender:${singledata.gender}</p>
+    </div>
+    <div class="flex gap-2">
+      <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=50&id=7163&format=png"}" alt="Price">
+      <p>Price:${singledata.price }</p>
+    </div>
+
+    <hr class="my-2">
+
+    <div class="flex justify-between items-center">
+    <button onclick=handleimg(${singledata.petId }) class="btn"><img class="w-6 h-6 " src="${"https://img.icons8.com/?size=50&id=24816&format=png"}" alt="Like"></button>
+    <button id="${singledata.petId}" onclick=handleAdopt(${singledata.petId}) class="btn">Adopt</button>
+    <button id="${singledata.petId+1000}" onclick=handleDetails(${singledata.petId+1000}) class="btn">Details</button>
+    
+      
+    </div>
+    `
+    cardSection.appendChild(card)
+
+    })
+
+
+    
+})
+  
 }
 
 const SetTimeout=(data)=>{
@@ -245,8 +309,12 @@ const showModalSection=(data)=>{
 }
 
 
-
+const sortButton=()=>{
+  
+  
+}
 
 
 loadButtons();
 loadCards();
+sortButton();
