@@ -53,9 +53,6 @@ const handleclick=(id)=>{
     
 }
 
-
-
-
 const displayCard=(data)=>{
     let count=1;
     const cardSection= document.getElementById("card-section")
@@ -151,11 +148,37 @@ const showImgSection=(data)=>{
 }
 
 const handleAdopt=(data)=>{
+
+  const body =document.getElementById("body")
+  const div =document.createElement("div")
   
   let btn =document.getElementById(data);
   btn.innerText="Adopted"
   btn.disabled = true
-  console.log(btn)
+  let num=3;
+  div.innerHTML=`<dialog id="my_modal_2" class="modal">
+        <div  class="modal-box ">
+          <h1 class="text-center py-5 text-5xl font-bold">Congrates</h1>
+          <p class="text-center font-bold">Adoption Process is Start For Your Pet</p>
+          <h1 id="modalh1" class="text-center py-5 text-5xl font-extrabold">${num}</h1>
+        </div>
+    </dialog>`
+    body.appendChild(div)
+    document.getElementById('my_modal_2').showModal()
+
+  const clockId=setInterval(()=>{
+    //console.log(num);
+    num--;
+    if(num==0){
+      clearInterval(clockId)
+    }
+    const h1=document.getElementById("modalh1")
+    h1.innerText=`${num}`
+  },1000)
+  
+    setTimeout(()=>{
+      body.removeChild(div);
+    },3000)
 }
 
 
@@ -222,9 +245,6 @@ const showModalSection=(data)=>{
 }
 
 
-
-
-    
 
 
 
