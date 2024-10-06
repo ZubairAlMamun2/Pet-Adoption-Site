@@ -8,9 +8,19 @@ const loadButtons=()=>{
     .catch((err)=>console.log(err))
 }
 
+const loadCards=()=>{
+    fetch("https://openapi.programming-hero.com/api/peddy/pets")
+    .then((res)=>res.json())
+    .then((data)=>displayCard(data.
+        pets
+        
+    ))
+    .catch((err)=>console.log(err))
+}
+
 const displayButtons=(data)=>{
     console.log(data)
-    let count=0;
+   
    
     const buttonSection= document.getElementById("button-section")
     data.map((singledata)=>{
@@ -18,15 +28,99 @@ const displayButtons=(data)=>{
     const button= document.createElement("button");
     button.innerHTML=
     `
-    <button class=" flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg">
-    <img class="h-5 w-5 md:h-10 md:w-10" src="${data[count].category_icon}" alt="">
-    <h2 class="text-sm md:text-lg font-semibold md:font-bold">${data[count].category}</h2>
+    <button onclick=handleclick(${singledata.id}) class=" flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg">
+    <img class="h-5 w-5 md:h-10 md:w-10" src="${singledata.category_icon}" alt="">
+    <h2 class="text-sm md:text-lg font-semibold md:font-bold">${singledata.category}</h2>
     </button>
     `
     buttonSection.append(button)
-    count++;
+   
+
     })
 }
 
+const arr=["0","cat","dog","rabbit","bird"];
+const handleclick=(id)=>{
+    
+    fetch(`https://openapi.programming-hero.com/api/peddy/category/${arr[id]}`)
+    .then((res)=>res.json())
+    .then((data)=>displayCard(data.data
+        
+        
+    ))
+    .catch((err)=>console.log(err))
+    
+    
+}
+
+
+
+
+const displayCard=(data)=>{
+    
+    const cardSection= document.getElementById("card-section")
+    cardSection.innerHTML=``
+    const imgSection= document.getElementById("img-section")
+    if(data.length==0){
+            const div=document.createElement("div")
+            div.classList="card p-5 shadow-lg border rounded-lg col-span-3 "
+            div.innerHTML=`<img class="object-cover" src="./images/error.webp" alt="">`
+            cardSection.appendChild(div)
+    }
+    console.log(data)
+
+    data.map((singledata)=>{
+      console.log(singledata)
+    const card= document.createElement("div");
+    card.classList="card p-5 shadow-lg border rounded-lg col-span-3  lg:col-span-1"
+    card.innerHTML=
+    `
+    <div class="">
+     <img class="h-full w-full object-cover rounded-lg border"
+      src="${singledata.image
+      }"
+      alt="Pet Image" />
+    </div>
+      <h2 class="text-lg font-semibold md:font-bold">${singledata.pet_name}</h2>
+    <div class="flex gap-2">
+      <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=48&id=VhlToDIAjOFs&format=png"}" alt="">
+      <p>Breed:${singledata.breed }</p>
+    </div>
+    <div class="flex gap-2">
+      <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=80&id=udduMUcrHmZa&format=png"}" alt="Date">
+      <p>Birth:${singledata.date_of_birth}</p>
+    </div>
+    <div class="flex gap-2">
+      <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=80&id=70834&format=png"}" alt="Gender">
+      <p>Gender:${singledata.gender}</p>
+    </div>
+    <div class="flex gap-2">
+      <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=50&id=7163&format=png"}" alt="Price">
+      <p>Price:${singledata.price }</p>
+    </div>
+
+    <hr class="my-2">
+
+    <div class="flex justify-between items-center">
+    <button onclick=handleimg(${singledata.price }) class="btn"><img class="w-6 h-6 " src="${"https://img.icons8.com/?size=50&id=24816&format=png"}" alt="Like"></button>
+    <button class="btn">Adopt</button>
+    <button class="btn">Details</button>
+      
+    </div>
+    `
+    cardSection.appendChild(card)
+    
+    })
+}
+
+const handleimg=(data)=>{
+    console.log(data)
+}
+
+
+    
+
+
 
 loadButtons();
+loadCards();
