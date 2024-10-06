@@ -256,7 +256,10 @@ const handleAdopt=(data)=>{
   let num=3;
   div.innerHTML=`<dialog id="my_modal_2" class="modal">
         <div  class="modal-box ">
-          <h1 class="text-center py-5 text-5xl font-bold">Congrates</h1>
+          <div class="flex justify-center">
+          <img class="object-cover" src="${"https://img.icons8.com/?size=48&id=ZDURYTlMxCmV&format=png"}" alt="">
+          </div>
+          <h1 class="text-center pb-5 pt-3 text-5xl font-bold">Congrates</h1>
           <p class="text-center font-bold">Adoption Process is Start For Your Pet</p>
           <h1 id="modalh1" class="text-center py-5 text-5xl font-extrabold">${num}</h1>
         </div>
