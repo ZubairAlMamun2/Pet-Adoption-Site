@@ -238,11 +238,11 @@ const handleimg=(data)=>{
 const showImgSection=(data)=>{
   console.log(data)
   const imgSection=document.getElementById("img-section");
-  const div =document.createElement("span")
-  div.classList=" gap-2 h-24 w-32 card m-1 shadow-lg border rounded-lg "
-  div.innerHTML=`<img class="h-full w-full object-cover rounded-lg" src="${data.image}" alt="">`
+  const div =document.createElement("div")
+  div.classList.add="col-span-1 gap-2  m-1 h-28 shadow-lg border rounded-lg "
+  div.innerHTML=`<img class="rounded-lg" src="${data.image}" alt="">`
 
-  imgSection.appendChild(div)
+  imgSection.append(div)
 }
 
 const handleAdopt=(data)=>{
@@ -343,12 +343,8 @@ const showModalSection=(data)=>{
 }
 
 
-const sortButton=()=>{
-  
-  
-}
+
 
 
 loadButtons();
 loadCards();
-sortButton();
