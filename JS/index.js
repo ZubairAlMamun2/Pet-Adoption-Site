@@ -28,12 +28,47 @@ const displayButtons=(data)=>{
     const button= document.createElement("button");
     button.innerHTML=
     `
-    <button onclick=handleclick(${singledata.id}) class=" flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg">
+    <button id="${singledata.id+100}" onclick=handleclick(${singledata.id}) class=" flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg">
     <img class="h-5 w-5 md:h-10 md:w-10" src="${singledata.category_icon}" alt="">
     <h2 class="text-sm md:text-lg font-semibold md:font-bold">${singledata.category}</h2>
     </button>
     `
     buttonSection.append(button)
+
+    button.addEventListener("click",()=>{
+      const btn1=document.getElementById("101")
+      const btn2=document.getElementById("102")
+      const btn3=document.getElementById("103")
+      const btn4=document.getElementById("104")
+      if(singledata.id+100==btn1.id){
+        
+        
+        btn1.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-full bg-green-100 border-green-400"
+        btn2.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
+        btn3.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
+        btn4.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
+      }
+      else if(singledata.id+100==btn2.id){
+        btn1.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
+        btn2.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-full bg-green-100 border-green-400"
+        btn3.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
+        btn4.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
+      }
+      else if(singledata.id+100==btn3.id){
+        btn1.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
+        btn2.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
+        btn3.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-full  bg-green-100 border-green-400"
+        btn4.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
+      }
+      else if(singledata.id+100==btn4.id){
+        btn1.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
+        btn2.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
+        btn3.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
+        btn4.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-full bg-green-100 border-green-400"
+      }
+      
+      //alert(singledata.id)
+    })
    
 
     })
@@ -95,7 +130,7 @@ const displayCard=(data)=>{
     </div>
     <div class="flex gap-2">
       <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=50&id=7163&format=png"}" alt="Price">
-      <p>Price:${singledata.price }</p>
+      <p>Price:${singledata.price }$</p>
     </div>
 
     <hr class="my-2">
@@ -119,16 +154,15 @@ const displayCard=(data)=>{
     btn.addEventListener("click",()=>{
 
       cardSection.innerHTML=``
-      console.log(data);
+      //console.log(data);
     let newarr = data.sort(
         (p1, p2) => (p1.price < p2.price) ? 1 : (p1.price > p2.price) ? -1 : 0);
     
-    console.log("Products sorted based on descending order of their prices are:")
+    
     //console.log(newarr);
     
     newarr.map((singledata)=>{
-      console.log(singledata)
-      //console.log(singledata)
+      
     const card= document.createElement("div");
     card.classList="card p-5 shadow-lg border rounded-lg col-span-3  lg:col-span-1"
     card.innerHTML=
@@ -154,7 +188,7 @@ const displayCard=(data)=>{
     </div>
     <div class="flex gap-2">
       <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=50&id=7163&format=png"}" alt="Price">
-      <p>Price:${singledata.price }</p>
+      <p>Price:${singledata.price }$</p>
     </div>
 
     <hr class="my-2">
