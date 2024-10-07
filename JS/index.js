@@ -97,14 +97,17 @@ const displayCard=(data)=>{
     const imgSection= document.getElementById("img-section")
     if(data.length==0){
             const div=document.createElement("div")
-            div.classList="card p-5 shadow-lg border rounded-lg col-span-3 "
-            div.innerHTML=`<img class="object-cover" src="./images/error.webp" alt="">`
+            div.classList="card p-5 shadow-lg border rounded-lg col-span-3 flex justify-center items-center h-[80vh]"
+            div.innerHTML=`<div>
+              <div class="flex justify-center"><img class="object-cover " src="./images/error.webp" alt=""></div>
+              <h1 class="text-center text-5xl font-bold">No Information Available</h1>
+            </div>`
             cardSection.appendChild(div)
     }
     //console.log(data)
 
     data.map((singledata)=>{
-      //console.log(singledata)
+      console.log(singledata)
     const card= document.createElement("div");
     card.classList="card p-5 shadow-lg border rounded-lg col-span-3  lg:col-span-1"
     card.innerHTML=
@@ -115,22 +118,22 @@ const displayCard=(data)=>{
       }"
       alt="Pet Image" />
     </div>
-      <h2 class="text-lg font-semibold md:font-bold">${singledata.pet_name}</h2>
+      <h2 class="text-lg font-semibold md:font-bold">${singledata.pet_name==null?"Not available":singledata.pet_name}</h2>
     <div class="flex gap-2">
       <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=48&id=VhlToDIAjOFs&format=png"}" alt="">
-      <p>Breed:${singledata.breed }</p>
+      <p>Breed:${singledata.breed==null?"Not available":singledata.breed }</p>
     </div>
     <div class="flex gap-2">
       <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=80&id=udduMUcrHmZa&format=png"}" alt="Date">
-      <p>Birth:${singledata.date_of_birth}</p>
+      <p>Birth:${singledata.date_of_birth==null?"Not available":singledata.date_of_birth}</p>
     </div>
     <div class="flex gap-2">
       <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=80&id=70834&format=png"}" alt="Gender">
-      <p>Gender:${singledata.gender}</p>
+      <p>Gender:${singledata.gender==null?"Not available":singledata.gender}</p>
     </div>
     <div class="flex gap-2">
       <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=50&id=7163&format=png"}" alt="Price">
-      <p>Price:${singledata.price }$</p>
+      <p>Price:${singledata.price==null?"Not available":singledata.price }$</p>
     </div>
 
     <hr class="my-2">
@@ -173,22 +176,22 @@ const displayCard=(data)=>{
       }"
       alt="Pet Image" />
     </div>
-      <h2 class="text-lg font-semibold md:font-bold">${singledata.pet_name}</h2>
+      <h2 class="text-lg font-semibold md:font-bold">${singledata.pet_name==null?"Not available":singledata.pet_name}</h2>
     <div class="flex gap-2">
       <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=48&id=VhlToDIAjOFs&format=png"}" alt="">
-      <p>Breed:${singledata.breed }</p>
+      <p>Breed:${singledata.breed==null?"Not available":singledata.breed }</p>
     </div>
     <div class="flex gap-2">
       <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=80&id=udduMUcrHmZa&format=png"}" alt="Date">
-      <p>Birth:${singledata.date_of_birth}</p>
+      <p>Birth:${singledata.date_of_birth==null?"Not available":singledata.date_of_birth}</p>
     </div>
     <div class="flex gap-2">
       <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=80&id=70834&format=png"}" alt="Gender">
-      <p>Gender:${singledata.gender}</p>
+      <p>Gender:${singledata.gender==null?"Not available":singledata.gender}</p>
     </div>
     <div class="flex gap-2">
       <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=50&id=7163&format=png"}" alt="Price">
-      <p>Price:${singledata.price }$</p>
+      <p>Price:${singledata.price==null?"Not available":singledata.price }$</p>
     </div>
 
     <hr class="my-2">
@@ -308,35 +311,35 @@ const showModalSection=(data)=>{
       src="${data.image}"
       alt="Pet Image" />
     </div>
-      <h2 class="text-xl py-5 font-semibold md:font-bold">${data.pet_name}</h2>
+      <h2 class="text-xl py-5 font-semibold md:font-bold">${data.pet_name==null?"Not available":data.pet_name}</h2>
 
 
     <div class="grid grid-cols-2">
-    <div class="flex gap-2 col-span-1">
+    <div class="flex gap-2 col-span-2 md:col-span-1">
       <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=48&id=VhlToDIAjOFs&format=png"}" alt="">
-      <p>Breed:${data.breed      }</p>
+      <p>Breed:${data.breed==null?"Not available":data.breed}</p>
     </div>
-    <div class="flex gap-2 col-span-1">
+    <div class="flex gap-2 col-span-2 md:col-span-1">
       <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=80&id=udduMUcrHmZa&format=png"}" alt="Date">
-      <p>Birth:${data.date_of_birth}</p>
+      <p>Birth:${data.date_of_birth==null?"Not available":data.date_of_birth}</p>
     </div>
-    <div class="flex gap-2 col-span-1">
+    <div class="flex gap-2 col-span-2 md:col-span-1">
       <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=80&id=70834&format=png"}" alt="Gender">
-      <p>Gender:${data.gender}</p>
+      <p>Gender:${data.gender==null?"Not available":data.gender}</p>
     </div>
-    <div class="flex gap-2 col-span-1">
+    <div class="flex gap-2 col-span-2 md:col-span-1">
       <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=50&id=7163&format=png"}" alt="Price">
-      <p>Price:${data.price }</p>
+      <p>Price:${data.price==null?"Not available":data.price }$</p>
     </div> 
-    <div class="flex gap-2 col-span-1">
+    <div class="flex gap-2 col-span-2 md:col-span-1">
       <img class="w-6 h-6 " src="${"https://img.icons8.com/?size=50&id=7163&format=png"}" alt="Price">
-      <p>vaccinated_status:${data.vaccinated_status}</p>
+      <p>vaccinated_status:${data.vaccinated_status==null?"Not available":data.vaccinated_status}</p>
     </div> 
     </div>
     <div class="">
       <h2 class="text-xl font-bold py-5">Detail Information</h2>
       <p>${data.
-        pet_details
+        pet_details==null?"Not available":data.pet_details
         }</p>
     </div> 
   `
