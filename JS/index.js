@@ -114,8 +114,8 @@ const displayCard=(data)=>{
     card.classList="card p-5 shadow-lg border rounded-lg col-span-3  lg:col-span-1"
     card.innerHTML=
     `
-    <div class="">
-     <img class="h-38 w-full object-cover rounded-lg border"
+    <div class="h-48">
+     <img class="h-full w-full object-cover rounded-lg border"
       src="${singledata.image
       }"
       alt="Pet Image" />
@@ -172,8 +172,8 @@ const displayCard=(data)=>{
     card.classList="card p-5 shadow-lg border rounded-lg col-span-3  lg:col-span-1"
     card.innerHTML=
     `
-    <div class="">
-     <img class="h-38 w-full object-cover rounded-lg border"
+    <div class="h-48">
+     <img class="h-full w-full object-cover rounded-lg border"
       src="${singledata.image
       }"
       alt="Pet Image" />
@@ -257,6 +257,7 @@ const handleAdopt=(data)=>{
   
   let btn =document.getElementById(data);
   btn.innerText="Adopted"
+  btn.classList="text-btn-bg text-lg bg-gray-300 font-bold border py-1 px-2 rounded-lg"
   btn.disabled = true
   let num=3;
   div.innerHTML=`<dialog id="my_modal_2" class="modal">
