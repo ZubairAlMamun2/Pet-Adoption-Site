@@ -43,28 +43,28 @@ const displayButtons=(data)=>{
       if(singledata.id+100==btn1.id){
         
         
-        btn1.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-full bg-green-100 border-green-400"
+        btn1.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-full bg-green-100 border-btn-bg"
         btn2.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
         btn3.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
         btn4.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
       }
       else if(singledata.id+100==btn2.id){
         btn1.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
-        btn2.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-full bg-green-100 border-green-400"
+        btn2.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-full bg-green-100 border-btn-bg"
         btn3.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
         btn4.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
       }
       else if(singledata.id+100==btn3.id){
         btn1.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
         btn2.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
-        btn3.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-full  bg-green-100 border-green-400"
+        btn3.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-full  bg-green-100 border-btn-bg"
         btn4.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
       }
       else if(singledata.id+100==btn4.id){
         btn1.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
         btn2.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
         btn3.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-lg"
-        btn4.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-full bg-green-100 border-green-400"
+        btn4.classList="flex justify-center border py-1 px-2 md:py-2 md:px-5 items-center  gap-1 md:gap-2 rounded-full bg-green-100 border-btn-bg"
       }
       
       //alert(singledata.id)
@@ -101,6 +101,8 @@ const displayCard=(data)=>{
             div.innerHTML=`<div>
               <div class="flex justify-center"><img class="object-cover " src="./images/error.webp" alt=""></div>
               <h1 class="text-center text-5xl font-bold">No Information Available</h1>
+              <p class="text-center text-base w-11/12 mx-auto py-5 font-bold">There are no information available about bird.But you if you want to know about cat,dog or rabit you can check it..
+              Thank You!</p>
             </div>`
             cardSection.appendChild(div)
     }
@@ -113,7 +115,7 @@ const displayCard=(data)=>{
     card.innerHTML=
     `
     <div class="">
-     <img class="h-full w-full object-cover rounded-lg border"
+     <img class="h-38 w-full object-cover rounded-lg border"
       src="${singledata.image
       }"
       alt="Pet Image" />
@@ -139,9 +141,9 @@ const displayCard=(data)=>{
     <hr class="my-2">
 
     <div class="flex justify-between items-center">
-    <button onclick=handleimg(${singledata.petId }) class="btn"><img class="w-6 h-6 " src="${"https://img.icons8.com/?size=50&id=24816&format=png"}" alt="Like"></button>
-    <button id="${singledata.petId}" onclick=handleAdopt(${singledata.petId}) class="btn">Adopt</button>
-    <button id="${singledata.petId+1000}" onclick=handleDetails(${singledata.petId+1000}) class="btn">Details</button>
+    <button onclick=handleimg(${singledata.petId }) class="text-btn-bg border py-1 px-2 rounded-lg"><img class="w-6 h-6 " src="${"https://img.icons8.com/?size=50&id=24816&format=png"}" alt="Like"></button>
+    <button id="${singledata.petId}" onclick=handleAdopt(${singledata.petId}) class="text-btn-bg text-lg font-bold border py-1 px-2 rounded-lg">Adopt</button>
+    <button id="${singledata.petId+1000}" onclick=handleDetails(${singledata.petId+1000}) class="text-btn-bg text-lg font-bold border py-1 px-2 rounded-lg">Details</button>
     
       
     </div>
@@ -171,7 +173,7 @@ const displayCard=(data)=>{
     card.innerHTML=
     `
     <div class="">
-     <img class="h-full w-full object-cover rounded-lg border"
+     <img class="h-38 w-full object-cover rounded-lg border"
       src="${singledata.image
       }"
       alt="Pet Image" />
@@ -197,9 +199,9 @@ const displayCard=(data)=>{
     <hr class="my-2">
 
     <div class="flex justify-between items-center">
-    <button onclick=handleimg(${singledata.petId }) class="btn"><img class="w-6 h-6 " src="${"https://img.icons8.com/?size=50&id=24816&format=png"}" alt="Like"></button>
-    <button id="${singledata.petId}" onclick=handleAdopt(${singledata.petId}) class="btn">Adopt</button>
-    <button id="${singledata.petId+1000}" onclick=handleDetails(${singledata.petId+1000}) class="btn">Details</button>
+    <button onclick=handleimg(${singledata.petId }) class="text-btn-bg border py-1 px-2 rounded-lg"><img class="w-6 h-6 " src="${"https://img.icons8.com/?size=50&id=24816&format=png"}" alt="Like"></button>
+    <button id="${singledata.petId}" onclick=handleAdopt(${singledata.petId}) class="text-btn-bg text-lg font-bold border py-1 px-2 rounded-lg">Adopt</button>
+    <button id="${singledata.petId+1000}" onclick=handleDetails(${singledata.petId+1000}) class="text-btn-bg text-lg font-bold border py-1 px-2 rounded-lg">Details</button>
     
       
     </div>

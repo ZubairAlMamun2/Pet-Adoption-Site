@@ -1,14 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Adoption Platform</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.12/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+    
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                "btn-bg": '#0E7A81',
+                
+                "text-primary":'#131313B3',
+                
+
+              },
+             
+            }
+          }
+        }
+      </script>
+      <style>
+        .Lato{
+                font-family: "Lato", sans-serif;
+                }
+
+      </style>
     
 </head>
-<body id="body">
+<body id="body" class="Lato">
 
     <header class="w-11/12  mx-auto">
         <!-- navbar section  -->
@@ -19,7 +47,7 @@
                 </div>
                 <h1 class="text-4xl font-bold">Peddy</h1>
             </div>
-            <div class="hidden md:flex pr-24">
+            <div class="hidden md:flex pr-24 text-text-primary">
                 <ul class="flex gap-10 ">
                     <li><button class="text-xl">Home</button></li>
                     <li><button class="text-xl">Shop</button></li>
@@ -34,10 +62,10 @@
 
         <!-- banner section -->
          <div id="banner" class="flex flex-col items-center mx-auto lg:w-6/12">
-            <h3 class="text-xl">Bringing Families Together ❤️‍🔥</h3>
+            <h3 class="text-xl text-text-primary">Bringing Families Together ❤️‍🔥</h3>
             <h1 class="py-4 lg:py-6 text-6xl font-semibold text-center">Your Path to Adoption Starts Here</h1>
             <p class="text-center">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
-            <a href="#main"><button class="btn my-5 lg:my-8 text-xl px-5">View More</button></a>
+            <a href="#main"><button class="bg-btn-bg text-white text-lg font-bold border py-2 px-3 rounded-lg my-5">View More</button></a>
             <div>
                 <img src="./images/pet.webp" alt="">
             </div>
@@ -50,15 +78,15 @@
         <div id="adopt-section">
           <div class="lg:w-6/12 mx-auto">
             <h1 class="text-4xl text-center font-semibold">Adopt  Your  Best Friend</h1>
-            <p class="text-center py-4 lg:py-6">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
+            <p class="text-center py-4 lg:py-6 text-text-primary">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
           </div>
         </div>
         <div id="button-section" class="flex justify-between ">
 
         </div>
         <div class="flex justify-between items-center py-5 lg:py-10">
-            <h2 class="text-lg font-semibold md:font-bold">Best Deal For You</h2>
-            <button id="sort-button" class=" border py-2 px-5  rounded-lg">
+            <h2 class="text-xl font-semibold md:font-bold">Best Deal For You</h2>
+            <button id="sort-button" class="bg-btn-bg text-white text-lg font-bold border py-2 px-3 rounded-lg">
                 Sort by price
             </button> 
         </div>
@@ -75,6 +103,45 @@
         </div>
 
     </main>
+    <footer class="bg-black text-white">
+        <div class="w-11/12   mx-auto lg:py-10 ">
+            <div class="grid grid-cols-2">
+                <div class="col-span-2 md:col-span-1">
+                    <div class="flex gap-2 items-center py-3">
+                        <div class="w-6 h-auto">
+                            <img class="w-full h-full" src="./images/logo.webp" alt="">
+                        </div>
+                        <h1 class="text-3xl font-bold">Peddy</h1>
+                    </div>
+                    <p>Location: av. Washington 165, NY CA 54003 <br>
+                        Phone: +31 85 964 47 25 <br>
+                        Email: info@yourdomain.com <br>
+                        Openings hours: 9.00 AM - 5.00 PM</p>
+                    <div>
+    
+                    </div>
+                </div>
+                <div class="col-span-2 md:col-span-1 grid grid-cols-2">
+                    <div class="col-span-1">
+                        <h1 class="text-lg font-medium py-2">Useful Links</h1>
+                        <ul>
+                            <li><a href="">Home</a></li>
+                            <li><a href="">About Us</a></li>
+                            <li><a href="">Animals</a></li>
+                            <li><a href="">Foundation</a></li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-span-1">
+                        <h1 class="text-lg font-medium py-2">Drop a Message</h1>
+                        <div class="py-2 w-36"><input class="w-36 bg-black border border-gray-100 rounded-lg p-2" type="text" placeholder="Enter your email "></div>
+                        <button class="py-2 w-36 bg-btn-bg rounded-lg">Subscribe</button>
+                    </div>
+                     
+                </div>
+            </div>
+        </div>
+    </footer>
 
     
     <dialog id="my_modal_1" class="modal">
