@@ -109,7 +109,7 @@ const displayCard=(data)=>{
     //console.log(data)
 
     data.map((singledata)=>{
-      console.log(singledata)
+     // console.log(singledata)
     const card= document.createElement("div");
     card.classList="card p-5 shadow-lg border rounded-lg col-span-3  lg:col-span-1"
     card.innerHTML=
@@ -241,7 +241,7 @@ const handleimg=(data)=>{
 }
 
 const showImgSection=(data)=>{
-  console.log(data)
+  //console.log(data)
   const imgSection=document.getElementById("img-section");
   const div =document.createElement("div")
   div.classList.add="col-span-1 gap-2  m-1 h-28 shadow-lg border rounded-lg "
@@ -303,7 +303,7 @@ const handleDetails=(data)=>{
 }
 
 const showModalSection=(data)=>{
-  console.log(data)
+  //console.log(data)
   const Details=document.getElementById("details");
   const div=document.createElement("div")
   Details.innerHTML=``

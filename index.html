@@ -45,7 +45,7 @@
                 <div class="w-8 h-auto">
                     <img class="w-full h-full" src="./images/logo.webp" alt="">
                 </div>
-                <h1 class="text-4xl font-bold">Peddy</h1>
+                <h1 class="text-4xl font-extrabold">Peddy</h1>
             </div>
             <div class="hidden md:flex pr-24 text-text-primary">
                 <ul class="flex gap-10 ">
@@ -54,9 +54,19 @@
                     <li><button class="text-xl">Contact</button></li>
                 </ul>
             </div>
-            <div >
+            <div class="hidden md:flex">
                 <button><img  src="https://img.icons8.com/?size=48&id=JOzPdFXJKESy&format=png" alt=""></button>
             </div>
+
+            <details class="flex md:hidden dropdown dropdown-end tabindex='0'">
+                <summary class="btn px-1 py-0 "><div class="h-8 w-10"><img class="h-full w-full" src="https://img.icons8.com/?size=50&id=8113&format=png" alt=""></div></summary>
+                <ul class="tabindex='0' menu dropdown-content bg-btn-bg rounded-box z-[1]  shadow">
+                    <li><button class="text-lg text-white">Home</button></li>
+                    <li><button class="text-lg text-white">Shop</button></li>
+                    <li><button class="text-lg text-white">Contact</button></li>
+                </ul>
+              </details>
+
         </nav>
 
 
