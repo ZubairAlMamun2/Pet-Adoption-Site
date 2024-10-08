@@ -97,7 +97,7 @@ const displayCard=(data)=>{
     const imgSection= document.getElementById("img-section")
     if(data.length==0){
             const div=document.createElement("div")
-            div.classList="card p-5 shadow-lg border rounded-lg col-span-3 flex justify-center items-center h-[80vh]"
+            div.classList="card p-5 shadow-lg border rounded-lg col-span-3 flex justify-center items-center h-[120vh] lg:h-[80vh]"
             div.innerHTML=`<div>
               <div class="flex justify-center"><img class="object-cover " src="./images/error.webp" alt=""></div>
               <h1 class="text-center text-5xl font-bold">No Information Available</h1>
