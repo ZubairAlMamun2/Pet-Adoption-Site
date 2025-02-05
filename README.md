@@ -1,32 +1,40 @@
-
-# Pet Adoption Platform
-
- In this Project I create a pet adoption platform where users can browse and adopt pets.Here I fetch  APIs to pet-related data such as all pets, categories of pets, and specific pet details , pet data based on category.
-
- 
+# Pet Adoption Site
 
 
-##  Key Features
+## Overview
+The Pet Adoption Site is a web application that helps users browse and adopt pets easily. It provides categorized pet listings, detailed pet profiles, and a seamless user experience. The project efficiently fetches pet data using APIs and implements interactive UI elements for better engagement.
 
-- Loading Spinner
-- Sort by Price
-- Adopt Button Behavior
-- Showing category wise data
-- Add imgage in another section when like button clicked
+## Live Project
+[ https://pet-shop-1971.netlify.app/](https://pet-shop-1971.netlify.app/)
 
-##  ES6 features used
+## Technologies Used
+- **Frontend:** HTML, CSS, JavaScript
+- **Styling:** Tailwind CSS
+- **APIs:** Pet-related data APIs
+- **Hosting:** Netlify
 
-- Arrow function
-- Multi-line Strings
-- Template Literals
--  Promises
-- let and const keywords  etc...
+## ✨ Features
+- **Browse & Search Pets:** Users can view pets by categories and search based on preferences..
+- **Sort by Price:** Ability to sort pets by price range.
+- **Loading Spinners:** Displays loading animations for better user experience.
+- **Responsive Design:** Tailwind CSS ensures the app is mobile-friendly.
+- **Category-Based Display:** Organizes pets by categories for better navigation.
 
+## 📦 Dependencies
+- `Tailwind CSS `
+- `ES6 Features `
+- `API Fetching`
 
+## 🛠 Setup & Installation
+1. **Clone the Repository:**
+   ```sh
+   git clone https://github.com/ZubairAlMamun2/Pet-Adoption-Site.git
+   cd Pet-Adoption-Site
+   ```
 
+2. **Open in a Code Editor (VS Code, etc.)**
+  
 
-## 🔗Live Links
-
-[Click Here](https://pet-shop-1971.netlify.app/)
-
+3. **Run the Project**
+  Open index.htmlin  a browser
 
